@@ -3,32 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Explorer Log</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🌎Explorer Log</h1>
-        <p>Registre suas aventuras!!</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>🌎 Explorer Log</h1>
+            <p>Registre suas aventuras!!</p>
+        </header>
 
-    <div class="form-card">
-        <input type="text" id="ipt-url" placeholder="URL da Imagem ">
-        <input type="text" id="ipt-legenda" placeholder="Onde você estava?">
-        <div class="row">
-            <input type="number" id="ipt-lat" placeholder="Latitude">
-            <input type="number" id="ipt-lon" placeholder="Longitude">
-            <button id="loc-atual" onclick="obterLocalizacao()">📍Usar Localização Atual</button>
+        <div class="form-card">
+            <input type="text" id="ipt-url" placeholder="URL da Imagem ">
+            <input type="text" id="ipt-legenda" placeholder="Onde você estava?">
+            <div class="row">
+                <input type="number" id="ipt-lat" placeholder="Latitude" step="any">
+                <input type="number" id="ipt-lon" placeholder="Longitude" step="any">
+                <button id="loc-atual">📍 Usar Localização Atual</button>
+            </div>
+            <button id="btn-adicionar">Adicionar ao Mural</button>
         </div>
-        <button id="btn-adicionar">Adicionar ao Mural</button>
 
-    </div>
+        <div class="app form-card">
+            <video id="webcam" autoplay playsinline style="width: 100%; max-width: 400px; border-radius: 8px; margin: 0 auto;"></video>
+            <canvas id="canvas" style="display:none;"></canvas>
 
-    <!--Galeria-->
-    <div id="galeria" class="grid-galeria">
-        <!--Os Cards serão injetados aqui-->
+            <div class="controles" style="display: flex; flex-direction: column; gap: 12px; margin-top: 12px;">
+                <input type="text" id="legenda" placeholder="Digite uma legenda para a foto...">
+                <button id="btn-capturar">📸 Tirar Foto e Localizar</button>
+            </div>
+        </div>
+
+        <div id="galeria" class="grid-galeria">
+            </div>
     </div>
     
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
